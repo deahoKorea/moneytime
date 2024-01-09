@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="images/favi/favicon-32x32.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
+
+    <title>머니타임</title>
+  </head>
+  <body>
+    <header class="header-sub">
+      <div class="mx-auto">
+        <a class="btn-back" href=""></a>
+        <h2>아이디/비밀번호 찾기</h2>
+      </div>
+    </header>
+    <main class="main pt20">
+      <section class="content white px16 pb40 pt55">
+        <div class="tab-type1">
+          <a class="btn-tab-id active" class="active" href="">아이디 찾기</a>
+          <a class="btn-tab-pw" href="">비밀번호 찾기</a>
+        </div>
+        <div class="tab-find" id="tabId">
+          <div class="input-title pt12">
+            <p class="explanation">회원정보에 등록된 휴대전화 입력</p>
+          </div>
+          <div class="input-type input-type2 pb10">
+            <input id="num1-1" type="tel" placeholder="휴대전화 입력 (‘-’제외)" />
+            <button type="button">전송</button>
+          </div>
+          <div class="input-type">
+            <input id="num1-2" type="number" placeholder="인증번호 입력" />
+          </div>
+        </div>
+
+        <div class="tab-find d-none" id="tabPw">
+          <div class="input-title">
+            <p class="explanation">회원정보에 등록된 아이디와 휴대전화 입력</p>
+          </div>
+          <div class="input-type pb10">
+            <input id="txt2" type="text" placeholder="아이디 입력" />
+          </div>
+          <div class="input-type input-type2 pb10">
+            <input id="num2-1" type="tel" placeholder="휴대전화 입력 (‘-’제외)" />
+            <button type="button">전송</button>
+          </div>
+          <div class="input-type">
+            <input id="num2-2" type="number" placeholder="인증번호 입력" />
+          </div>
+        </div>
+        <button class="btn-yellow-off large mt30" type="button">로그인</button>
+      </section>
+    </main>
+  </body>
+</html>
