@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="icon" href="images/favi/favicon-32x32.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
+
+    <title>머니타임</title>
+  </head>
+  <body>
+    <header class="header-sub">
+      <div class="mx-auto">
+        <a class="btn-back" href="javascript:window.history.back();"></a>
+        <h2>포인트 출금</h2>
+      </div>
+    </header>
+    <main class="main">
+      <section class="content bg-white">
+        <div class="pt28 px16">
+          <a href="" class="point-board__view none align both vm shadow">
+            <p>김머니님의 포인트</p>
+            <strong>50,000P</strong>
+          </a>
+        </div>
+        <div class="px16">
+          <div class="input-title pb8 pt28">
+            <label class="title title2" for="txt-withdraw-1">포인트 출금</label>
+          </div>
+          <div class="input-type">
+            <input id="txt-withdraw-1" type="number" placeholder="출금할 포인트 입력" />
+            <div class="pt7">
+              <div class="alert text-right pb43">출금 금액은 10,000p이상 1,000p 단위로 출금이 가능</div>
+            </div>
+          </div>
+          <div class="input-title pb8">
+            <label class="title title2">계좌정보</label>
+          </div>
+          <div class="input-title pb8">
+            <label class="title" for="txt-withdraw-2">은행</label>
+          </div>
+          <div class="input-type mb18">
+            <select name="" id="txt-withdraw-2" title="출금은행 선택" class="select large">
+              <option value="">출금 은행 선택</option>
+            </select>
+          </div>
+          <div class="input-title pb8">
+            <label class="title" for="txt-withdraw-3">계좌번호(-없이)</label>
+          </div>
+          <div class="input-type mb18">
+            <input id="txt-withdraw-3" type="password" placeholder="계좌번호 입력" />
+          </div>
+          <div class="input-title pb8">
+            <label class="title" for="txt-withdraw-4">예금주</label>
+          </div>
+          <div class="input-type mb18">
+            <input id="txt-withdraw-4" type="password" placeholder="*홍길동" />
+          </div>
+        </div>
+        <div class="px16 mt28">
+          <button class="btn-yellow large btn-withdraw" type="button">출금하기</button>
+        </div>
+      </section>
+      <dialog class="dialog withdraw">
+        <div class="px16">
+          <strong
+            >포인트 출금 신청이<br />
+            접수되었습니다</strong
+          >
+          <p>
+            신청하신 금액이 매달 30일<br />
+            오후 6시 이후에 출금 될 예정입니다
+          </p>
+        </div>
+        <button class="btn-confirm" type="button" onclick="location.href='myinfo-main.html'">확인</button>
+      </dialog>
+      <dialog class="dialog withdraw withdraw2">
+        <div class="px16">
+          <strong>출금 잔액이 부족합니다</strong>
+          <p>
+            잔액은 1,000p이상 1,000p단위로<br />
+            출금 가능합니다
+          </p>
+        </div>
+        <button class="btn-confirm" type="button">확인</button>
+      </dialog>
+    </main>
+    <!-- 네비 하단영역 -->
+    <div class="nav-foot">
+      <nav class="nav-foot__cont">
+        <ul>
+          <li class="home"><a href="index.html">홈</a></li>
+          <li class="point"><a href="javascript:alert('준비중 입니다.')">포인트몰</a></li>
+          <li class="mission"><a href="javascript:alert('준비중 입니다.')">미션</a></li>
+          <li class="news"><a href="javascript:alert('준비중 입니다.')">뉴스</a></li>
+          <li class="info active"><a class="active" href="myinfo-main.html">내정보</a></li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+  <script>
+    const openEl = document.querySelector(".btn-withdraw");
+    const closeEl = document.querySelector(".btn-confirm");
+    const dialogEl = document.querySelector(".dialog");
+
+    openEl.addEventListener("click", () => {
+      dialogEl.showModal();
+    });
+    closeEl.addEventListener("click", () => {
+      dialogEl.close();
+    });
+  </script>
+  <script src="js/button.js"></script>
+</html>

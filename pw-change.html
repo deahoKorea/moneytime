@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="icon" href="images/favi/favicon-32x32.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
+
+    <title>머니타임</title>
+  </head>
+  <body>
+    <header class="header-sub border-bottom-d2">
+      <div class="mx-auto">
+        <a class="btn-back" href="javascript:window.history.back();"></a>
+        <h2>비밀번호 변경</h2>
+      </div>
+    </header>
+    <main class="main">
+      <section class="content bg-white px16">
+        <div class="input-title mt28">
+          <label class="title" for="txt1">현재 비밀번호</label>
+        </div>
+        <div class="input-type input-type1 mt14">
+          <input id="txt1" type="password" placeholder="현재 비밀번호 입력" />
+        </div>
+        <div class="input-title mt28">
+          <label class="title" for="">새 비밀번호</label>
+          <p class="explanation">새로운 비밀번호 영문 대문자와 소문자, 숫자, 특수문자 중 2가지 이상 8-15자로 입력</p>
+        </div>
+        <div class="input-type input-type1 mt14">
+          <input id="txt2" type="password" placeholder="새 비밀번호 입력" />
+          <input id="txt3" type="password" placeholder="새 비밀번호 확인 입력" />
+        </div>
+      </section>
+      <div class="fixed-bottom px16">
+        <button class="btn-yellow large" type="button" onclick="location.href='myinfo-main.html'">확인</button>
+      </div>
+    </main>
+    <!-- 네비 하단영역 -->
+    <div class="nav-foot">
+      <nav class="nav-foot__cont">
+        <ul>
+          <li class="home"><a href="index.html">홈</a></li>
+          <li class="point"><a href="javascript:alert('준비중 입니다.')">포인트몰</a></li>
+          <li class="mission"><a href="javascript:alert('준비중 입니다.')">미션</a></li>
+          <li class="news"><a href="javascript:alert('준비중 입니다.')">뉴스</a></li>
+          <li class="info active"><a class="active" href="myinfo-main.html">내정보</a></li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+
+  <script src="js/button.js"></script>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="icon" href="images/favi/favicon-32x32.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
+
+    <title>머니타임</title>
+  </head>
+  <body>
+    <header>
+      <div class="mx-auto">
+        <h1 class="logo align both vm">
+          <a href="index.html"></a>
+          <button type="button" aria-label="설정" onclick="location.href='myinfo-setting.html'"></button>
+        </h1>
+      </div>
+    </header>
+    <main class="main">
+      <section class="content bg-white pt45">
+        <nav class="myinfo-menu">
+          <ul class="myinfo-menu__list">
+            <li><strong class="myinfo-menu__title">내 정보</strong></li>
+            <li><a href="meminfo-edit.html">회원정보 수정</a></li>
+            <li><a href="point-use-list.html">포인트 내역</a></li>
+            <li><strong class="myinfo-menu__title">문의</strong></li>
+            <li><a href="general-inquiry.html">일반 문의</a></li>
+            <li><a href="advertisement-inquiry.html">광고 문의</a></li>
+            <li><a href="point-inquiry.html">포인트 문의</a></li>
+            <li><strong class="myinfo-menu__title">고객센터</strong></li>
+            <li><a href="company-information.html">업체 정보</a></li>
+            <li><strong class="myinfo-menu__title">약관</strong></li>
+            <li><a href="terms-main.html">약관</a></li>
+            <li><a class="btn-logout" href="javascript:void(0);">로그아웃</a></li>
+          </ul>
+        </nav>
+      </section>
+      <dialog class="dialog withdraw">
+        <div class="px16">
+          <strong>로그아웃 되었습니다</strong>
+        </div>
+        <button class="btn-confirm" type="button" onclick="location.href='index.html'">확인</button>
+      </dialog>
+      <!-- 네비 하단영역 -->
+      <div class="nav-foot">
+        <nav class="nav-foot__cont">
+          <ul>
+            <li class="home"><a href="index.html">홈</a></li>
+            <li class="point"><a href="javascript:alert('준비중 입니다.')">포인트몰</a></li>
+            <li class="mission"><a href="javascript:alert('준비중 입니다.')">미션</a></li>
+            <li class="news"><a href="javascript:alert('준비중 입니다.')">뉴스</a></li>
+            <li class="info active"><a class="active" href="myinfo-main.html">내정보</a></li>
+          </ul>
+        </nav>
+      </div>
+    </main>
+  </body>
+  <script>
+    const openEl = document.querySelector(".btn-logout");
+    const closeEl = document.querySelector(".btn-confirm");
+    const dialogEl = document.querySelector(".dialog");
+
+    openEl.addEventListener("click", () => {
+      dialogEl.showModal();
+    });
+    closeEl.addEventListener("click", () => {
+      dialogEl.close();
+    });
+  </script>
+  <script src="js/button.js"></script>
+</html>

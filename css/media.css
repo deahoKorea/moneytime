@@ -7,6 +7,16 @@
   .img-piggy p {
     padding-top: 183px;
   }
+  .board-scroll__card {
+    grid-template-columns: 30px 1fr;
+    padding: 18px 10px;
+  }
+  .board-scroll__card strong {
+    font-size: 12px;
+  }
+  .board-scroll__card p {
+    font-size: 10px;
+  }
 } /* 430px end */
 @media (max-width: 380px) {
   .point-board {
@@ -71,5 +81,11 @@
     font-size: 16px;
   }
 } /* 380px end */
-@media (max-width: 380px) {
-}
+@media (max-width: 330px) {
+  .board-scroll__card {
+    display: block;
+  }
+  .board-scroll__card .icon {
+    display: none;
+  }
+} /* 330px end */

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="icon" href="images/favi/favicon-32x32.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
+
+    <title>머니타임</title>
+  </head>
+  <body>
+    <header class="header-sub border-bottom-d2">
+      <div class="mx-auto">
+        <a class="btn-back" href="javascript:window.history.back();"></a>
+        <h2>광고 문의</h2>
+      </div>
+    </header>
+    <main class="main">
+      <section class="content bg-white px16">
+        <div class="input-title pt28">
+          <label class="title title2" for="txt1">이메일</label>
+        </div>
+        <div class="input-type">
+          <input id="txt1" type="email" placeholder="example@gmail.com" />
+        </div>
+        <div class="input-title pt28">
+          <label class="title title2" for="txt2">제목</label>
+        </div>
+        <div class="input-type">
+          <input id="txt2" type="email" placeholder="제목 입력" />
+        </div>
+        <div class="input-title pt28">
+          <label class="title title2" for="txt3">문의 내용</label>
+        </div>
+        <div class="input-type pb28">
+          <textarea id="txt3" class="textarea" placeholder="내용 입력" name="" id=""></textarea>
+        </div>
+        <div class="input-title">
+          <label class="title title2 pb8" for="">첨부파일</label>
+          <p class="explanation">첨부파일은 최대 3개, 50mb까지 등록 가능합니다.</p>
+        </div>
+        <ul class="attached-file__img mb33">
+          <li>
+            <div class="img-bx"><img src="./images/@img_banner1(1).png" alt="" /></div>
+          </li>
+        </ul>
+        <div class="input-type pb20" id="fileWrap">
+          <label class="input-file-button" for="file"> 파일선택 </label>
+          <input type="file" id="file" />
+        </div>
+        <button class="btn-yellow large" type="button" onclick="location.href='myinfo-main.html'">확인</button>
+      </section>
+    </main>
+  </body>
+  <script>
+    document.getElementById("file").addEventListener("change", function (event) {
+      const fileList = event.target.files;
+      const existingUl = document.querySelector(".attached-file__img");
+
+      // Check the current number of existing li elements
+      const currentImageCount = existingUl ? existingUl.querySelectorAll("li").length : 0;
+
+      for (let i = 0; i < fileList.length; i++) {
+        // If the number of images exceeds 3, show an alert and stop adding more images
+        if (currentImageCount >= 3) {
+          alert("이미지는 최대 3개까지만 업로드 가능합니다.");
+          break;
+        }
+
+        const file = fileList[i];
+
+        if (file.type.startsWith("image/")) {
+          const reader = new FileReader();
+
+          reader.onload = function (event) {
+            const imageSrc = event.target.result;
+
+            const imageDiv = document.createElement("li");
+            imageDiv.classList.add("img-bx", "image_item");
+
+            const image = new Image();
+            image.src = imageSrc;
+            image.classList.add("uploaded_image");
+
+            imageDiv.appendChild(image);
+
+            // Find the existing ul element with the 'attached-file__img' class
+            const existingUl = document.querySelector(".attached-file__img");
+
+            // Append the new image below the existing ul
+            if (existingUl) {
+              existingUl.appendChild(imageDiv);
+            }
+          };
+
+          reader.readAsDataURL(file);
+        }
+      }
+    });
+  </script>
+
+  <script src="js/button.js"></script>
+</html>

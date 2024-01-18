@@ -24,10 +24,6 @@ $(".btn-tab3").click(function () {
   $(".btn-tab3").removeClass("active");
   $(this).toggleClass("active");
 });
-$(".btn-tab3").click(function () {
-  $(".btn-tab3").removeClass("active");
-  $(this).toggleClass("active");
-});
 $(".tab-type3 li:nth-child(1) a").click(function () {
   $(".table-list").removeClass("active");
   $("#fullDetails").addClass("active");

@@ -47,9 +47,9 @@
           <div class="title-type1 pt15">
             <strong>놓칠 수 없는 혜택!</strong>
           </div>
-          <div class="board-scroll mt14 pb10 scroll-x">
+          <div class="board-scroll mt14 pb10">
             <a href="" class="board-scroll__card">
-              <div class="icon"><img src="./images/ico_pencil.svg" alt="아이콘" /></div>
+              <div class="icon"></div>
               <div class="desc">
                 <strong
                   >리뷰 쓰고<br />
@@ -59,11 +59,11 @@
               </div>
             </a>
             <a href="" class="board-scroll__card">
-              <div class="icon"><img src="./images/ico_board.svg" alt="아이콘" /></div>
+              <div class="icon"></div>
               <div class="desc">
                 <strong
                   >친구 초대시<br />
-                  무제한 5000p 받자!</strong
+                  5000p 받자!</strong
                 >
                 <p>5000P 받으러 가기</p>
               </div>
@@ -103,8 +103,14 @@
               <strong>5000P</strong>
             </div>
           </div>
-          <button class="btn-yellow large mt45" type="button">친구 초대하기</button>
+          <button class="btn-yellow large mt45 btn-invite" type="button">친구 초대하기</button>
         </div>
+        <dialog class="dialog invite">
+          <ul>
+            <li><button type="button" class="btn-send btn-kakao-send">카카오톡으로 코드 전송</button></li>
+            <li><button type="button" class="btn-send btn-message-send">문자로 코드 전송</button></li>
+          </ul>
+        </dialog>
         <div class="px16 pb20">
           <div class="title-type1 pt27">
             <strong>포인트 팡팡 미션참여</strong>
@@ -336,18 +342,31 @@
         </div>
       </section>
     </main>
-    <!-- 네비 하단영역 -->
-    <div class="nav-foot">
-      <nav class="nav-foot__cont">
-        <ul>
-          <li class="active"><a class="active" href="index.html">홈</a></li>
-          <li><a href="javascript:alert('준비중 입니다.')">포인트몰</a></li>
-          <li><a href="javascript:alert('준비중 입니다.')">미션</a></li>
-          <li><a href="javascript:alert('준비중 입니다.')">내정보</a></li>
-        </ul>
-      </nav>
-    </div>
+      <!-- 네비 하단영역 -->
+      <div class="nav-foot">
+        <nav class="nav-foot__cont">
+          <ul>
+            <li class="home active"><a class="active" href="index.html">홈</a></li>
+            <li class="point"><a href="javascript:alert('준비중 입니다.')">포인트몰</a></li>
+            <li class="mission"><a href="javascript:alert('준비중 입니다.')">미션</a></li>
+            <li class="news"><a href="javascript:alert('준비중 입니다.')">뉴스</a></li>
+            <li class="info "><a href="myinfo-main.html">내정보</a></li>
+          </ul>
+        </nav>
+      </div>
   </body>
+  <script>
+    const openEl = document.querySelector(".btn-invite");
+    const closeEl = document.querySelector(".btn-send");
+    const dialogEl = document.querySelector(".dialog");
 
+
+    openEl.addEventListener("click", () => {
+      dialogEl.showModal();
+    });
+    closeEl.addEventListener("click", () => {
+      dialogEl.close();
+    });
+  </script>
   <script src="js/button.js"></script>
 </html>
